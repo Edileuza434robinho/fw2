@@ -1,1 +1,6 @@
 @import 'bootstrap/dist/css/bootstrap.min.css';
+
+.degrademenu{
+   background: linear-gradient(102deg, rgba(238,174,202,1) 0%, rgba(209,178,212,1) 27%, rgba(190,181,218,1) 55%, rgba(177,183,223,1) 61%, 
+   rgba(166,185,227,1) 70%, rgba(180,183,222,1) 85%, rgba(183,182,221,1) 89%, rgba(158,186,230,1) 97%, rgba(148,187,233,1) 100%);
+}

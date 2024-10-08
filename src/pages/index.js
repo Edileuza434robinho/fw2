@@ -1,3 +1,8 @@
+import Menu from "./components/navbar";
+
 export default function Index() {
-  return <h1>Ola Next</h1>
+  return <>
+  <Menu />
+  <h1> Ola turma 6V</h1>
+  </>
 }
