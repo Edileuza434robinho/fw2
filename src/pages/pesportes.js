@@ -3,7 +3,7 @@ import Footer from "./components/footer";
 import {Container} from 'react-bootstrap';
 import CardProd from "./cardprod";
 
-export default function Pesportes() {
+export default function Pesportes({produtos}) {
   return <>
   <Menu />
   <Container className="border border-2 rounded border-primay col-sm-6 text-center">
@@ -12,13 +12,20 @@ export default function Pesportes() {
   </Container>
     <Container>
     <div class="row">
-
-        <CardProd titulo={"Bola de volei"} descricao={"Bola de volei"} preco={99.99}/>
-        <CardProd titulo={"Bola de basquete"} descricao={"Bola de basquete"} preco={59.68}/>
-        <CardProd titulo={"Bola de tenis "} descricao={"Bola de tenis"} preco={200}/>
+      {produtos.map(produto =>
+        <CardProd titulo={produto.titulo} descricao={produto.descricao} preco={produto.preco}/>
+      )}
     </div>
     </Container>
     
   <Footer/>
   </>
+}
+
+export async function getServerSideProps() {
+  // Fetch data from external API
+  const res = await fetch('http://localhost:3000/api/produtos/data')
+  const repo = await res.json()
+  // Pass data to the page via props
+  return { props: { produtos: repo } }
 }
