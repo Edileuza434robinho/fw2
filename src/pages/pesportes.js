@@ -1,24 +1,27 @@
 import Menu from "./components/navbar";
 import Footer from "./components/footer";
-import {Container} from 'react-bootstrap';
+import { Container } from 'react-bootstrap';
 import CardProd from "./cardprod";
 
-export default function Pesportes({produtos}) {
+export default function Pesportes({ produtos }) {
   return <>
-  <Menu />
-  <Container className="border border-2 rounded border-primay col-sm-6 text-center">
-    Lista de produtos de esportes 
+    <Menu />
+    <Container className="border border-2 rounded border-primay col-sm-6 text-center">
+      Lista de produtos de esportes
 
-  </Container>
-    <Container>
-    <div class="row">
-      {produtos.map(produto =>
-        <CardProd titulo={produto.titulo} descricao={produto.descricao} preco={produto.preco}/>
-      )}
-    </div>
     </Container>
-    
-  <Footer/>
+    <Container>
+      <div className="row row-col-1 row-cols-md-5 g-3">
+        {produtos.map(produto =>
+          <div key={produto.id}>
+            <CardProd titulo={produto.titulo} descricao={produto.descricao} preco={produto.preco} />
+          </div>
+        )}
+      </div>
+    </Container>
+
+    <Footer />
+
   </>
 }
 
