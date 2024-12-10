@@ -1,2 +1,9 @@
 @import 'bootstrap/dist/css/bootstrap.min.css';
 
+body{
+  background: rgb(255,255,255);
+background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(222,179,235,1) 52%, rgba(0,212,255,1) 100%);
+}
+.conteudo{
+  height: auto !important;
+}
